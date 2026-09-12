@@ -40,3 +40,24 @@ products/         one dir per product (code lives in its own repo when published
 docs/             FACTORY.md, CANDIDATES.md, EXPERIMENT_LOG.md, NIGHT_SPRINT.md, DEVLOG.md
 research/         raw-notes.md + raw/ (search result JSONs)
 ```
+
+## Meta-learning from night sprint #1 (2026-09-12/13)
+
+What actually worked (keep for next run):
+- **Zero-runtime constraint discovered first** → forced static/client-side product class → zero ops cost, instant GitHub Pages deploy. Do this check FIRST every sprint.
+- **HN Algolia API for research** (`hn.algolia.com/api/v1/search?query=…&tags=story`) is fast and fetchable via curl; Reddit blocks direct JSON (403) — use web-search snippets for thread evidence instead.
+- **Portable node.exe** (single binary downloaded into workspace) unlocked a real unit-test loop with no system install. 73 tests caught 5 real parser bugs before browser QA.
+- **Browser QA via in-app browser + tiny static server + a documented test seam** (`window.__bpInjectFile`) let the whole file-drop flow be automated (file choosers are not automatable).
+- **Verification-scored parsing** (auto sign-convention detection) came directly from evidence: LLM-converters hallucinate; deterministic + self-checking is the differentiator. Products should derive their core mechanic from the researched pain.
+- Pricing/competitor table from ONE comparison blog + one search gave the whole pricing landscape in ~5 minutes.
+
+What to do differently next time:
+- Write the landing page BEFORE the FAQ-level polish; the landing is the product for early users.
+- Prepare fixture PDFs early (PDF generation by hand cost ~30 min); keep a growing library of real bank layouts per product.
+- Ship to GitHub Pages even earlier (it cost nothing and made QA use the real CDN path).
+
+Reusable assets (in this repo):
+- factory/ templates (idea, evaluation, experiment, launch checklist, kill criteria)
+- tools/sign-license.js + secrets-local/ pattern for offline ECDSA licensing
+- tools/serve.js + tools/make-fixture-pdf.js (now in products/balanceproof/tools/) for static-app QA
+- research/raw-notes.md as the evidence format template
