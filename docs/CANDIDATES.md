@@ -23,7 +23,7 @@ Scoring 1–10 per criterion. Evidence in `research/raw-notes.md`.
 - **Why now:** privacy sensitivity of AI uploads is peak (HN enclave converters appearing); QuickBooks/Xero remain dominant; banks still gate CSV history.
 - **Existing alternatives:** MoneyThumb ($59.95+/yr desktop), DocuClipper ($29+/mo), CapyParse ($29/mo), BSC (~$30/mo), free hooks (Founderpath ≤5 PDFs). Market PROVEN; privacy + one-time-pricing + verification are open wedges.
 - **Differentiation:** (a) 100% client-side — strongest possible privacy claim; (b) mathematical running-balance verification; (c) no subscription — one-time Pro license; (d) instant, no signup, no upload.
-- **Monetization hypothesis:** freemium. Free: unlimited conversions up to 3 pages/file + all CSV exports. Pro one-time $39: unlimited pages, batch files, QBO/OFX/Xero exports, all future bank profiles. Anchored below MoneyThumb's $59.95+/yr and absurdly below a year of DocuClipper ($348+/yr).
+- **Monetization hypothesis:** freemium trial. First statement converts in full free (any pages, all formats — proof before paywall); afterwards free = 3 pages + CSV/JSON. Pro one-time $39: unlimited pages + QBO/OFX/Xero exports. Anchored below MoneyThumb's $59.95+/yr and absurdly below a year of DocuClipper ($348+/yr). First-20-users get Pro free for feedback (stated on landing).
 - **First acquisition channel:** r/Bookkeeping, r/QuickBooks, r/Accounting, r/Xero + Facebook bookkeeper groups + long-tail SEO ("<bank> statement to csv") via GitHub Pages landing.
 - **Expected MVP complexity:** medium — pdf.js text extraction + deterministic parser for ~10 bank layouts + generic fallback with column mapping + 4 export formats + verification UI. No backend at all.
 - **Kill criteria:** see `factory/kill-criteria.md`.
