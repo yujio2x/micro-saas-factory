@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BalanceProof — Bank statement PDF to CSV/QBO, right in your browser</title>
+<meta name="description" content="Convert bank statement PDFs to clean, balance-verified CSV, QuickBooks (.qbo), OFX and Xero files. 100% in your browser — your files never leave your computer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Cpath d='M25 60 l15 15 l35 -40' stroke='white' stroke-width='10' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">✓</span> BalanceProof
+    </a>
+    <span class="local-badge" title="No uploads, no accounts, no tracking">100% in your browser</span>
+    <nav class="header-nav">
+      <a href="#app">Convert</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <h1>Bank statement PDFs → clean, <em>verified</em> CSV. Without uploading them to anyone.</h1>
+      <p class="hero-sub">
+        For bookkeepers, accountants and business owners who receive statements as PDFs.
+        BalanceProof reads the transactions, checks them against the statement's running balance,
+        and exports ready-to-import files. Everything runs locally in your browser — the PDF never leaves your computer.
+      </p>
+      <div class="hero-points">
+        <span>✓ Files never uploaded</span>
+        <span>✓ Running-balance reconciliation</span>
+        <span>✓ CSV · QuickBooks .qbo · OFX · Xero</span>
+        <span>✓ No signup</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" class="app-section">
+    <div class="container">
+
+      <div id="dropzone" class="dropzone" role="button" tabindex="0" aria-label="Drop a bank statement PDF here or click to choose a file">
+        <div class="dz-icon" aria-hidden="true">📄</div>
+        <p class="dz-title">Drop a bank statement PDF here</p>
+        <p class="dz-sub">or click to choose a file — it is processed on this device only</p>
+        <input type="file" id="file-input" accept="application/pdf,.pdf" hidden>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+      <div id="result" class="result" hidden>
+        <div class="result-head">
+          <div>
+            <h2 id="result-title">Statement parsed</h2>
+            <p id="result-meta" class="result-meta"></p>
+          </div>
+          <div id="verify-badge" class="verify-badge" role="status"></div>
+        </div>
+
+        <div id="warnings" class="warnings" hidden></div>
+
+        <div class="table-wrap" id="table-wrap">
+          <table class="txn-table" aria-label="Parsed transactions">
+            <thead>
+              <tr>
+                <th>Date</th><th>Description</th><th>Amount</th><th>Balance</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="txn-body"></tbody>
+          </table>
+        </div>
+        <p class="table-hint">Click any cell to fix it. Reconciliation re-checks automatically.</p>
+
+        <div class="export-bar">
+          <label class="opt">
+            Date format
+            <select id="opt-datefmt">
+              <option value="iso">2024-03-01</option>
+              <option value="dmy">01/03/2024 (UK)</option>
+              <option value="mdy">03/01/2024 (US)</option>
+            </select>
+          </label>
+          <label class="opt">
+            Currency
+            <select id="opt-currency">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+              <option value="CAD">CAD</option>
+              <option value="AUD">AUD</option>
+            </select>
+          </label>
+          <span class="export-buttons">
+            <button class="btn btn-primary" data-export="csv">CSV</button>
+            <button class="btn" data-export="json">JSON</button>
+            <button class="btn" data-export="xero" data-pro>Xero CSV <span class="pro-tag">Pro</span></button>
+            <button class="btn" data-export="qbocsv" data-pro>QuickBooks CSV <span class="pro-tag">Pro</span></button>
+            <button class="btn" data-export="qbo" data-pro>.qbo <span class="pro-tag">Pro</span></button>
+            <button class="btn" data-export="ofx" data-pro>.ofx <span class="pro-tag">Pro</span></button>
+          </span>
+        </div>
+
+        <details class="unparsed">
+          <summary id="unparsed-summary">Lines that were not recognized</summary>
+          <pre id="unparsed-list" class="unparsed-list"></pre>
+        </details>
+      </div>
+
+      <div id="locked" class="locked" hidden>
+        <p><strong>This PDF has more than 3 pages.</strong> The free version converts up to 3 pages per statement.
+        Unlock unlimited pages and QuickBooks/OFX/Xero exports with a Pro license.</p>
+        <button class="btn btn-primary" id="locked-upgrade">I have a license — unlock</button>
+        <button class="btn" id="locked-continue">Continue with page 1 preview</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="container">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Drop your PDF.</strong> Text-based statement PDFs from your online banking work best. Nothing is uploaded — parsing happens in this tab.</li>
+        <li><strong>Review the rows.</strong> BalanceProof checks every transaction against the running balance and flags anything that does not reconcile. Fix cells inline if needed.</li>
+        <li><strong>Export.</strong> Download a CSV, a QuickBooks-ready .qbo, OFX for Moneydance/GnuCash, or a Xero-format file.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Pricing</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <p class="price">$0</p>
+          <ul>
+            <li>Unlimited statements</li>
+            <li>Up to 3 pages per statement</li>
+            <li>CSV &amp; JSON export</li>
+            <li>Running-balance verification</li>
+            <li>No signup, no upload</li>
+          </ul>
+        </div>
+        <div class="plan plan-pro">
+          <h3>Pro <span class="pro-tag">one-time</span></h3>
+          <p class="price">$39 <span class="price-note">once, not a subscription</span></p>
+          <ul>
+            <li>Unlimited pages per statement</li>
+            <li>QuickBooks .qbo &amp; QuickBooks CSV</li>
+            <li>OFX &amp; Xero CSV export</li>
+            <li>All future bank-profile updates</li>
+          </ul>
+          <p class="early-bird"><strong>Early access:</strong> the first 20 users get a Pro license free in exchange for honest feedback. <a href="#license-panel">Claim yours below.</a></p>
+        </div>
+      </div>
+
+      <div id="license-panel" class="license-panel">
+        <h3>Have a Pro license key?</h3>
+        <p>Keys look like <code>BP1.xxxx.yyyy</code>. Paste yours to unlock Pro on this device.</p>
+        <div class="license-row">
+          <input type="text" id="license-input" placeholder="BP1.xxxx.yyyy" autocomplete="off" spellcheck="false">
+          <button class="btn btn-primary" id="license-verify">Unlock Pro</button>
+        </div>
+        <p id="license-status" class="license-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="container">
+      <h2>FAQ</h2>
+
+      <details>
+        <summary>Do my files really stay on my computer?</summary>
+        <p>Yes. BalanceProof is a static web app: the PDF is read and parsed by JavaScript running in your browser tab. There is no server to upload to. You can confirm this yourself: open your browser DevTools → Network tab, convert a statement, and you will see zero requests carrying file data. After the page loads, you can even go offline and keep converting.</p>
+      </details>
+
+      <details>
+        <summary>Which banks are supported?</summary>
+        <p>BalanceProof uses layout-agnostic parsing tuned for common US (MM/DD/YYYY) and UK (DD/MM/YYYY) statement layouts, including card statements without a running balance. If your statement has a running-balance column, every parsed row is mathematically re-checked, so you know immediately whether it read correctly. Unrecognized lines are always shown so nothing is silently dropped.</p>
+      </details>
+
+      <details>
+        <summary>My PDF is a scan / photo. Does it work?</summary>
+        <p>No — scanned statements are images and contain no text to extract. BalanceProof deliberately does not send your documents to an OCR cloud. Print-quality text PDFs downloaded from online banking work.</p>
+      </details>
+
+      <details>
+        <summary>How do I import into QuickBooks or Xero?</summary>
+        <p>QuickBooks Desktop: export <code>.qbo</code>, then File → Import → Bank transactions; QuickBooks will ask you to map it to your account the first time. QuickBooks Online: use the Pro "QuickBooks CSV" export and import via Banking → File upload. Xero: use the Pro Xero CSV and import via Accounting → Bank accounts → Import a statement.</p>
+      </details>
+
+      <details>
+        <summary>Why does it sometimes flag rows as not reconciling?</summary>
+        <p>Some banks print debits as plain positive numbers; BalanceProof auto-detects this, but unusual layouts can still slip through. Other causes: two-character OCR-style typos in the PDF text layer, or transactions that continue on the next page. The flagged rows are highlighted so you can fix or delete them before exporting.</p>
+      </details>
+
+      <details>
+        <summary>Is it affiliated with my bank or Intuit?</summary>
+        <p>No. BalanceProof is an independent tool, not affiliated with any bank, Intuit, or Xero. "QuickBooks" and "Xero" are trademarks of their respective owners.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>BalanceProof — built by yujio2x-industries. Code: MIT license. No files, accounts, or analytics leave your device.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/legacy/build/pdf.min.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/exporters.js"></script>
+<script src="js/license.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
