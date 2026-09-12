@@ -66,3 +66,14 @@ what would a fair price look like? — record answer verbatim, do NOT anchor fir
 - ≥20 free conversions/day after posting (landing page counter placeholder pending)
 - ≥10 feedback conversations → ≥3 willing to pay / accept paid tier
 - Bank-layout coverage requests collected (target: 5 named banks)
+
+## Posting-risk notes (added after adversarial review)
+
+- r/QuickBooks and Intuit community forums routinely remove third-party tool links — read each
+  community's rules first; prefer threads where someone is actively asking for this exact problem.
+- Never paste the same template into multiple threads in a day; automate-mods pattern-match.
+- The validation feedback loop is the prefilled "Statement read wrong? Report this layout" link on
+  the results screen (opens a GitHub issue with metadata only, no transaction data). Expect
+  issue reports as the primary signal; success metrics above should count those too.
+- No analytics by design: the loop is (1) issue reports, (2) direct replies, (3) early-access
+  issue claims. If none of the three fire after 30 quality messages, that IS the measurement.
