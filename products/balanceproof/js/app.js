@@ -104,7 +104,7 @@
     reader.onload = function () {
       var typed = new Uint8Array(reader.result);
       PDF_READY.then(function () {
-        return window.pdfjsLib.getDocument({ data: typed });
+        return window.pdfjsLib.getDocument({ data: typed }).promise;
       }).then(function (pdf) {
         var pages = [];
         var next = function (n) {
@@ -316,7 +316,8 @@
         state.fileName = file.name;
         state.pageCount = numPages;
         state.lockedPages = Math.max(0, numPages - FREE_PAGE_LIMIT);
-        applyParse(allText, state.lockedPages > 0 ? pages.slice(0, FREE_PAGE_LIMIT).join('\n') : allText);
+        var parseText = state.lockedPages > 0 ? pages.slice(0, FREE_PAGE_LIMIT).join('\n') : allText;
+        applyParse(parseText, state.lockedPages > 0);
       },
       function (msg) { setStatus(msg, true); }
     );
@@ -454,4 +455,8 @@
   $('locked-continue').addEventListener('click', function () { hide(lockedEl); });
 
   restoreLicense();
+
+  // Test seam for automated QA: inject a File and run the same pipeline as the
+  // file picker. Client-side anyway — no special capability granted.
+  window.__bpInjectFile = handleFile;
 })();

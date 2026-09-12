@@ -149,6 +149,7 @@ a { color: var(--accent); }
   background: #eff6ff; border: 1px solid #c7d2fe; font-size: 15px;
   display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
 }
+.locked[hidden] { display: none; }
 .locked p { margin: 0; flex: 1 1 100%; }
 
 /* sections */

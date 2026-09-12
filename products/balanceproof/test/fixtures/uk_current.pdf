@@ -1,0 +1,57 @@
+%PDF-1.4
+%BalanceProof fixture
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 561 >>
+stream
+BT /F1 9 Tf 12 TL 56 736 Td
+(HIGHLAND BANK) Tj
+T*
+(CURRENT ACCOUNT STATEMENT) Tj
+T*
+(Account: 12345678) Tj
+T*
+(Statement period: 01/03/2024 to 31/03/2024) Tj
+T*
+(Page 1 of 1) Tj
+T*
+(Balance B/F                                1,000.00) Tj
+T*
+(01 Mar 2024 TILL 4471 STARBUCKS LONDON -4.85 995.15) Tj
+T*
+(02 Mar 2024 TFL TRAVEL CHARGE -6.60 988.55) Tj
+T*
+(03 Mar 2024 SALARY ACME LTD 2,400.00 3,388.55) Tj
+T*
+(05 Mar 2024 STANDING ORDER RENT -950.00 2,438.55) Tj
+T*
+(07 Mar 2024 BOOTS OPTICIANS REFUND 12.99 2,451.54) Tj
+T*
+(31 Mar 2024 Balance C/F 2,451.54) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000031 00000 n 
+0000000080 00000 n 
+0000000137 00000 n 
+0000000263 00000 n 
+0000000875 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+943
+%%EOF

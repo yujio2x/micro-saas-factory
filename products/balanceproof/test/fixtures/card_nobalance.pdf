@@ -1,0 +1,53 @@
+%PDF-1.4
+%BalanceProof fixture
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 328 >>
+stream
+BT /F1 9 Tf 12 TL 56 736 Td
+(OAKLINE CARD) Tj
+T*
+(MONTHLY STATEMENT) Tj
+T*
+(Statement: March 2024) Tj
+T*
+(Page 1 of 1) Tj
+T*
+(03/01 TACO BELL 12.34) Tj
+T*
+(03/05 SHELL OIL 45.00) Tj
+T*
+(03/12 PAYMENT THANK YOU -100.00) Tj
+T*
+(03/18 WEB HOSTING MONTHLY \(15.99\)) Tj
+T*
+(03/22 COFFEE SHOP 4.50-) Tj
+T*
+(Total charges 62.33) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000031 00000 n 
+0000000080 00000 n 
+0000000137 00000 n 
+0000000263 00000 n 
+0000000642 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+710
+%%EOF

@@ -1,0 +1,73 @@
+%PDF-1.4
+%BalanceProof fixture
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1094 >>
+stream
+BT /F1 9 Tf 12 TL 56 736 Td
+(FIRST NATIONAL BANK) Tj
+T*
+(PERSONAL CHECKING ACCOUNT STATEMENT) Tj
+T*
+(Account holder: J SAMPLE) Tj
+T*
+(Statement period: 03/01/2024 to 03/31/2024) Tj
+T*
+(Page 1 of 2) Tj
+T*
+(------------------------------------------------------------------) Tj
+T*
+(Date       Description                Amount        Balance) Tj
+T*
+(------------------------------------------------------------------) Tj
+T*
+(Beginning balance                                   $1,000.00) Tj
+T*
+(03/01/2024 03/01 DEBIT CARD PURCHASE STARBUCKS SEATTLE WA -5.40 $994.60) Tj
+T*
+(03/02/2024 DIRECT DEPOSIT PAYROLL ACME CORP P123456 2,500.00 3,494.60) Tj
+T*
+(03/03/2024 ONLINE PAYMENT RENT MARCH -1,200.00 2,294.60) Tj
+T*
+(03/05/2024 ATM WITHDRAWAL 5TH AVE -60.00 2,234.60) Tj
+T*
+(03/07/2024 GROCERY MART PURCHASE LOYALTY DISCOUNT APPLIED -85.23 2,149.37) Tj
+T*
+(03/15/2024 ONLINE TRANSFER TO SAVINGS -300.00 1,849.37) Tj
+T*
+(03/20/2024 REFUND AMAZON LLC 25.99 1,875.36) Tj
+T*
+(Total credits 2,525.99) Tj
+T*
+(Total debits -1,650.63) Tj
+T*
+(MEMBER FDIC) Tj
+T*
+(03/31/2024 Ending balance $1,875.36) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000031 00000 n 
+0000000080 00000 n 
+0000000137 00000 n 
+0000000263 00000 n 
+0000001409 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1477
+%%EOF

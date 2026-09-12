@@ -1,0 +1,49 @@
+%PDF-1.4
+%BalanceProof fixture
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 370 >>
+stream
+BT /F1 9 Tf 12 TL 56 736 Td
+(PILOT BANK BUSINESS ACCOUNT) Tj
+T*
+(Statement period: 04/01/2024 to 04/30/2024) Tj
+T*
+(Page 1 of 1) Tj
+T*
+(Beginning balance $2,000.00) Tj
+T*
+(04/02/2024 WIRE FEE \(25.00\) $1,975.00) Tj
+T*
+(04/03/2024 CHECK 1001 45.00- $1,930.00) Tj
+T*
+(04/05/2024 INVOICE 8812 PAYMENT 1,250.00CR $3,180.00) Tj
+T*
+(04/30/2024 Ending balance $3,180.00) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000031 00000 n 
+0000000080 00000 n 
+0000000137 00000 n 
+0000000263 00000 n 
+0000000684 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+752
+%%EOF
