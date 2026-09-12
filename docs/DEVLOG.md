@@ -118,3 +118,61 @@ Secret scan first (git grep patterns + file review): only harmless "money token"
 ## Final security check (end of sprint)
 
 See final section at bottom (to be appended before 05:37).
+
+---
+
+## 01:15 — Adversarial commercial review (independent critique agent) + fixes
+
+An independent critique pass attacked the product as a skeptical bookkeeper. Verdict: strong core
+differentiator, but several real problems — all fixed the same hour (product commit `2783a9c`):
+
+1. **Trust gap** ("anonymous JS on github.io"): footer + FAQ now link the open-source repo
+   (strongest verifiability lever), issues page as contact channel; DevTools answer replaced with
+   "it's open source, read it".
+2. **Paywall before value**: 3-page free limit hit most real statements immediately → replaced with
+   **trial model**: the FIRST statement converts in full free (any pages, all export formats);
+   afterwards 3 pages + CSV/JSON. Verified in browser: full 5-page parse + QBO export on trial;
+   second long statement correctly locks.
+3. **Dead-end early-access CTA**: now opens a prefilled "Early access" GitHub issue (a path that
+   actually works today).
+4. **Overpromising copy**: "verified" qualified (needs running balance; no-balance statements show
+   an amber warning now); "All future bank-profile updates" removed from Pro; honest bank-support
+   FAQ (no invented bank lists); scan answer gained a workaround pointer.
+5. **No validation loop**: added privacy-safe "Statement read wrong? Report this layout" link
+   (prefilled GitHub issue with metadata only — profile, page/row counts, verified status; NO
+   transaction data). Owner can measure validation via issue reports + early-access claims.
+6. Recognized-but-not-fixed: Pro formats partially overlap with native QBO/Xero CSV import (real
+   value concentrated in QuickBooks Desktop users + unlimited pages) — documented as a commercial
+   risk in CANDIDATES/COMPETITORS; pricing may need revisiting after first user feedback.
+
+Also added: GitHub Actions CI (tests on push/PR — green), release **v0.1.0-mvp**, SEO long-tail
+keyword doc for the owner (docs/launch/SEO_KEYWORDS.md).
+
+## Final repo state
+
+- **Product**: https://github.com/yujio2x/balanceproof — branch `main`, HEAD `f10b6be`, working tree clean, CI passing (73 tests), Pages: https://yujio2x.github.io/balanceproof/ (verified live end-to-end: parse → reconcile → render on production URL), Release: v0.1.0-mvp.
+- **Factory**: https://github.com/yujio2x/micro-saas-factory — branch `main`, HEAD `a759a46`, working tree clean.
+
+## Final security check (05:0x, verified at sprint end)
+
+- [x] student-os, student-ai-bot, project2034, uni, rand, other personal projects: NOT touched (no writes, no config changes, no git operations on them)
+- [x] No secrets copied from anywhere; no credentials read; no `.env` inspected
+- [x] ECDSA private key generated TONIGHT (not read from anywhere) — `secrets-local/bp-license-private.pem`, gitignored, in NO repo; sample test license `secrets-local/sample-license.txt` local only
+- [x] No `.env` committed; secret scan on both repos before every push series (git grep + file review); only harmless "money token" comment matches
+- [x] No private data published; fixtures are synthetic (no real bank documents, no real personal data)
+- [x] No purchases, no paid resources, no trials started; only free GitHub Pages + Actions
+- [x] No external publishing except GitHub (2 new public repos + Pages + 1 release); no messages sent anywhere
+- [x] No system config changes; portable node.exe lives inside factory workspace (gitignored); QA server runs only on 127.0.0.1
+- [x] All important work committed and pushed (both repos clean)
+
+## Final commercial verdict (honest)
+
+Would someone pay? A subset, yes: bookkeepers with QuickBooks **Desktop** and >3-page statements
+feel this pain monthly and incumbents charge $19–159/mo; $39 one-time is an easy trial decision.
+The biggest open risks: (1) real-statement layout coverage is unproven — the verification badge
+limits damage but coverage decides word-of-mouth; (2) Pro's paid formats partially overlap native
+CSV imports, so WTP concentrates in QBDT users — if early feedback shows QBO-only users, reposition
+pricing (e.g., per-statement packs); (3) distribution depends on owner's community posts surviving
+moderation. Nothing here is fabricated: there are zero users, zero revenue, zero testimonials —
+**NOT YET VALIDATED**. The factory, evidence, product, and launch path are real and ready for
+human validation tomorrow morning.
