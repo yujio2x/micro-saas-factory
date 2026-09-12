@@ -1,0 +1,11 @@
+# local only
+*secret*
+*.key
+*.pem
+.env
+.env.*
+!.env.example
+research/raw/*.json
+node_modules/
+*.local
+node-portable.exe
