@@ -9,3 +9,5 @@ research/raw/*.json
 node_modules/
 *.local
 node-portable.exe
+products/
+node-portable.exe
