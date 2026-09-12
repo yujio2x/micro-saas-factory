@@ -1,0 +1,20 @@
+FIRST NATIONAL BANK
+PERSONAL CHECKING ACCOUNT STATEMENT
+Account holder: J SAMPLE
+Statement period: 03/01/2024 to 03/31/2024
+Page 1 of 2
+------------------------------------------------------------------
+Date       Description                Amount        Balance
+------------------------------------------------------------------
+Beginning balance                                   $1,000.00
+03/01/2024 03/01 DEBIT CARD PURCHASE STARBUCKS SEATTLE WA -5.40 $994.60
+03/02/2024 DIRECT DEPOSIT PAYROLL ACME CORP P123456 2,500.00 3,494.60
+03/03/2024 ONLINE PAYMENT RENT MARCH -1,200.00 2,294.60
+03/05/2024 ATM WITHDRAWAL 5TH AVE -60.00 2,234.60
+03/07/2024 GROCERY MART PURCHASE LOYALTY DISCOUNT APPLIED -85.23 2,149.37
+03/15/2024 ONLINE TRANSFER TO SAVINGS -300.00 1,849.37
+03/20/2024 REFUND AMAZON LLC 25.99 1,875.36
+Total credits 2,525.99
+Total debits -1,650.63
+MEMBER FDIC
+03/31/2024 Ending balance $1,875.36
